@@ -1,4 +1,4 @@
-package com.klapertart.myapplication.data
+package com.klapertart.myapplication.data.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

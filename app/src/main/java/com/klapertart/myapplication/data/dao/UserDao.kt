@@ -1,10 +1,10 @@
-package com.klapertart.myapplication.dao
+package com.klapertart.myapplication.data.dao
 
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
-import com.klapertart.myapplication.data.User
+import com.klapertart.myapplication.data.entities.User
 
 @Dao
 interface UserDao {
@@ -23,4 +23,7 @@ interface UserDao {
 
     @Delete
     fun delete(user: User)
+
+    @Query("DELETE FROM user")
+    fun deleteAll()
 }
