@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.klapertart.myapplication.data.entities.Product
 import com.klapertart.myapplication.data.entities.User
 import com.klapertart.myapplication.data.AppDatabase
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,15 +33,18 @@ class MainActivity : AppCompatActivity() {
         db.userDao().insertAll(user2)
 
         val product = Product(
-            1,
+            UUID.randomUUID().toString(),
             "TShirt",
             5,
             15000.0
         )
         db.productDao().insertAll(product)
 
-
         println("USER : " + db.userDao().getAll())
         println("PRODUCT : " + db.productDao().getAll())
+        println("SEARCH USER : " + db.userDao().findByName("Abdillah","Hamka"))
+
+        db.userDao().delete(user1)
+        println("AFTER DELETE USER : " + db.userDao().getAll())
     }
 }

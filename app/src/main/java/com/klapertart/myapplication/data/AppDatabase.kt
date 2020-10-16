@@ -12,7 +12,7 @@ import com.klapertart.myapplication.utils.DATABASE_NAME
 
 @Database(entities = arrayOf(
     User::class,
-    Product::class), version = 2)
+    Product::class), version = 3)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
     abstract fun productDao(): ProductDao
